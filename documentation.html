@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Backtrader Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Backtrader Pro</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="getting-started.html">Getting Started</a></li>
+                <li><a href="documentation.html" class="active">Documentation</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="index.html#download" class="btn-download">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content-page">
+        <div class="container">
+            <aside class="sidebar">
+                <h3>Documentation</h3>
+                <ul class="toc">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#core-concepts">Core Concepts</a></li>
+                    <li><a href="#strategies">Creating Strategies</a></li>
+                    <li><a href="#indicators">Indicators</a></li>
+                    <li><a href="#data-feeds">Data Feeds</a></li>
+                    <li><a href="#backtesting">Backtesting</a></li>
+                    <li><a href="#optimization">Optimization</a></li>
+                    <li><a href="#analysis">Performance Analysis</a></li>
+                    <li><a href="#examples">Examples</a></li>
+                    <li><a href="#advanced">Advanced Topics</a></li>
+                </ul>
+            </aside>
+
+            <main class="main-content">
+                <h1>Documentation</h1>
+                <p class="intro">Complete guide to using Backtrader Pro for developing and testing trading strategies.</p>
+
+                <section id="overview">
+                    <h2>Overview</h2>
+                    <p>Backtrader Pro is a powerful platform designed for traders and quantitative analysts to develop, test, and optimize trading strategies. Built with performance and flexibility in mind, it provides all the tools you need to create robust trading systems.</p>
+
+                    <h3>Key Capabilities</h3>
+                    <ul>
+                        <li>Strategy development with intuitive API</li>
+                        <li>Historical backtesting with realistic market simulation</li>
+                        <li>Parameter optimization and walk-forward analysis</li>
+                        <li>Comprehensive performance analytics</li>
+                        <li>Multiple data source integration</li>
+                        <li>Custom indicator development</li>
+                    </ul>
+                </section>
+
+                <section id="core-concepts">
+                    <h2>Core Concepts</h2>
+
+                    <h3>Cerebro Engine</h3>
+                    <p>The Cerebro engine is the core of Backtrader Pro. It orchestrates all components including strategies, data feeds, brokers, and analyzers.</p>
+
+                    <h3>Strategies</h3>
+                    <p>Strategies contain your trading logic - when to buy, when to sell, and how to manage positions. They operate on data feeds and place orders through the broker.</p>
+
+                    <h3>Data Feeds</h3>
+                    <p>Data feeds provide market data to your strategies. They can come from various sources including CSV files, databases, or live APIs.</p>
+
+                    <h3>Broker</h3>
+                    <p>The broker simulates order execution, manages your cash and positions, and applies commissions and slippage.</p>
+
+                    <h3>Indicators</h3>
+                    <p>Indicators are mathematical calculations on price data (moving averages, RSI, etc.) that help inform trading decisions.</p>
+                </section>
+
+                <section id="strategies">
+                    <h2>Creating Strategies</h2>
+
+                    <h3>Strategy Structure</h3>
+                    <p>A basic strategy consists of:</p>
+                    <ul>
+                        <li><strong>__init__:</strong> Initialize indicators and parameters</li>
+                        <li><strong>next:</strong> Called for each bar of data, contains your trading logic</li>
+                        <li><strong>notify_order:</strong> Receive notifications about order status</li>
+                        <li><strong>notify_trade:</strong> Receive notifications about completed trades</li>
+                    </ul>
+
+                    <h3>Example Strategy Pattern</h3>
+                    <div class="code-block">
+                        <p>Create a strategy by defining your logic in the strategy editor:</p>
+                        <ol>
+                            <li>Initialize your indicators in the setup phase</li>
+                            <li>Define entry conditions (when to buy)</li>
+                            <li>Define exit conditions (when to sell)</li>
+                            <li>Configure position sizing and risk management</li>
+                        </ol>
+                    </div>
+
+                    <h3>Order Types</h3>
+                    <ul>
+                        <li><strong>Market Orders:</strong> Execute at the next available price</li>
+                        <li><strong>Limit Orders:</strong> Execute only at specified price or better</li>
+                        <li><strong>Stop Orders:</strong> Trigger when price reaches stop level</li>
+                        <li><strong>Stop-Limit Orders:</strong> Combination of stop and limit</li>
+                    </ul>
+                </section>
+
+                <section id="indicators">
+                    <h2>Indicators</h2>
+
+                    <h3>Built-in Indicators</h3>
+                    <p>Backtrader Pro includes a comprehensive library of technical indicators:</p>
+
+                    <h4>Trend Indicators</h4>
+                    <ul>
+                        <li>Simple Moving Average (SMA)</li>
+                        <li>Exponential Moving Average (EMA)</li>
+                        <li>Moving Average Convergence Divergence (MACD)</li>
+                        <li>Average Directional Index (ADX)</li>
+                    </ul>
+
+                    <h4>Momentum Indicators</h4>
+                    <ul>
+                        <li>Relative Strength Index (RSI)</li>
+                        <li>Stochastic Oscillator</li>
+                        <li>Commodity Channel Index (CCI)</li>
+                        <li>Rate of Change (ROC)</li>
+                    </ul>
+
+                    <h4>Volatility Indicators</h4>
+                    <ul>
+                        <li>Bollinger Bands</li>
+                        <li>Average True Range (ATR)</li>
+                        <li>Standard Deviation</li>
+                    </ul>
+
+                    <h4>Volume Indicators</h4>
+                    <ul>
+                        <li>On-Balance Volume (OBV)</li>
+                        <li>Volume Weighted Average Price (VWAP)</li>
+                        <li>Money Flow Index (MFI)</li>
+                    </ul>
+
+                    <h3>Custom Indicators</h3>
+                    <p>Create your own custom indicators by extending the indicator base class. Custom indicators can combine existing indicators or implement entirely new calculations.</p>
+                </section>
+
+                <section id="data-feeds">
+                    <h2>Data Feeds</h2>
+
+                    <h3>Supported Data Sources</h3>
+                    <ul>
+                        <li><strong>CSV Files:</strong> Import historical data from CSV files</li>
+                        <li><strong>APIs:</strong> Connect to Yahoo Finance, Alpha Vantage, and other providers</li>
+                        <li><strong>Databases:</strong> Load data from SQL databases</li>
+                        <li><strong>Live Feeds:</strong> Connect to real-time data sources (Pro feature)</li>
+                    </ul>
+
+                    <h3>Data Format</h3>
+                    <p>Data should include at minimum:</p>
+                    <ul>
+                        <li>Datetime/timestamp</li>
+                        <li>Open, High, Low, Close prices</li>
+                        <li>Volume (optional but recommended)</li>
+                    </ul>
+
+                    <h3>Multiple Timeframes</h3>
+                    <p>Use multiple timeframes in the same strategy to analyze different time horizons simultaneously.</p>
+                </section>
+
+                <section id="backtesting">
+                    <h2>Backtesting</h2>
+
+                    <h3>Running a Backtest</h3>
+                    <ol>
+                        <li>Select your strategy</li>
+                        <li>Choose your data feed and date range</li>
+                        <li>Set initial capital and position sizing</li>
+                        <li>Configure commission and slippage</li>
+                        <li>Run the backtest</li>
+                        <li>Analyze results</li>
+                    </ol>
+
+                    <h3>Realistic Simulation</h3>
+                    <p>Backtrader Pro simulates real market conditions:</p>
+                    <ul>
+                        <li><strong>Commission:</strong> Configure realistic commission rates</li>
+                        <li><strong>Slippage:</strong> Simulate price slippage on order execution</li>
+                        <li><strong>Position Sizing:</strong> Fractional position sizing and margin requirements</li>
+                        <li><strong>Data Alignment:</strong> Proper handling of multiple timeframes and symbols</li>
+                    </ul>
+
+                    <h3>Avoiding Look-Ahead Bias</h3>
+                    <p>The platform prevents common pitfalls like look-ahead bias by ensuring indicators and strategies only access historical data available at each point in time.</p>
+                </section>
+
+                <section id="optimization">
+                    <h2>Optimization</h2>
+
+                    <h3>Parameter Optimization</h3>
+                    <p>Find optimal parameter values for your strategy:</p>
+                    <ul>
+                        <li>Define parameter ranges to test</li>
+                        <li>Select optimization metric (Sharpe ratio, total return, etc.)</li>
+                        <li>Run optimization across parameter space</li>
+                        <li>Review results and select best parameters</li>
+                    </ul>
+
+                    <h3>Optimization Methods</h3>
+                    <ul>
+                        <li><strong>Grid Search:</strong> Test all combinations of parameters</li>
+                        <li><strong>Random Search:</strong> Sample random parameter combinations</li>
+                        <li><strong>Genetic Algorithm:</strong> Evolutionary optimization approach</li>
+                    </ul>
+
+                    <h3>Walk-Forward Analysis</h3>
+                    <p>Validate strategy robustness using walk-forward analysis:</p>
+                    <ol>
+                        <li>Optimize parameters on in-sample data</li>
+                        <li>Test on out-of-sample data</li>
+                        <li>Roll forward and repeat</li>
+                        <li>Evaluate combined results</li>
+                    </ol>
+
+                    <div class="warning">
+                        <strong>Warning:</strong> Be careful of overfitting! Always validate on out-of-sample data.
+                    </div>
+                </section>
+
+                <section id="analysis">
+                    <h2>Performance Analysis</h2>
+
+                    <h3>Key Metrics</h3>
+                    <ul>
+                        <li><strong>Total Return:</strong> Overall percentage gain/loss</li>
+                        <li><strong>Sharpe Ratio:</strong> Risk-adjusted return measure</li>
+                        <li><strong>Maximum Drawdown:</strong> Largest peak-to-trough decline</li>
+                        <li><strong>Win Rate:</strong> Percentage of profitable trades</li>
+                        <li><strong>Profit Factor:</strong> Gross profit / gross loss</li>
+                        <li><strong>Average Trade:</strong> Mean profit/loss per trade</li>
+                    </ul>
+
+                    <h3>Visualizations</h3>
+                    <p>View comprehensive charts and graphs:</p>
+                    <ul>
+                        <li>Equity curve over time</li>
+                        <li>Drawdown chart</li>
+                        <li>Trade distribution histogram</li>
+                        <li>Monthly/annual returns heatmap</li>
+                        <li>Rolling performance metrics</li>
+                    </ul>
+
+                    <h3>Trade Analysis</h3>
+                    <p>Examine individual trades in detail:</p>
+                    <ul>
+                        <li>Entry and exit points on price chart</li>
+                        <li>Trade duration and P&L</li>
+                        <li>Winning vs losing trade analysis</li>
+                        <li>Trade distribution by various factors</li>
+                    </ul>
+                </section>
+
+                <section id="examples">
+                    <h2>Example Strategies</h2>
+
+                    <h3>Moving Average Crossover</h3>
+                    <p>Classic trend-following strategy using two moving averages. Buy when fast MA crosses above slow MA, sell when it crosses below.</p>
+
+                    <h3>RSI Mean Reversion</h3>
+                    <p>Counter-trend strategy that buys oversold conditions (RSI < 30) and sells overbought conditions (RSI > 70).</p>
+
+                    <h3>Breakout Strategy</h3>
+                    <p>Momentum strategy that enters positions when price breaks out of a defined range or channel.</p>
+
+                    <h3>Multi-Timeframe Strategy</h3>
+                    <p>Advanced strategy using multiple timeframes to confirm trend direction before entering trades.</p>
+
+                    <div class="note">
+                        <strong>Note:</strong> Example strategies are included in the installation for learning purposes. Always backtest and validate before using in live trading.
+                    </div>
+                </section>
+
+                <section id="advanced">
+                    <h2>Advanced Topics</h2>
+
+                    <h3>Portfolio Backtesting</h3>
+                    <p>Test strategies across multiple instruments simultaneously to evaluate portfolio-level performance and diversification benefits.</p>
+
+                    <h3>Custom Analytics</h3>
+                    <p>Create custom analyzers to calculate specific metrics relevant to your trading approach.</p>
+
+                    <h3>Event-Driven Architecture</h3>
+                    <p>Understand the event-driven nature of the platform for advanced strategy development.</p>
+
+                    <h3>Performance Optimization</h3>
+                    <p>Tips for optimizing strategy performance when backtesting large datasets or complex strategies.</p>
+
+                    <h3>Integration & Automation</h3>
+                    <p>Integrate Backtrader Pro with other tools and automate your workflow using the command-line interface.</p>
+                </section>
+
+                <div class="cta-box">
+                    <h3>Need Help?</h3>
+                    <p>Check out our FAQ or join the community forum for support.</p>
+                    <a href="faq.html" class="cta-button">View FAQ</a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Backtrader Pro</h4>
+                    <p>Professional trading strategy development platform</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="index.html#download">Downloads</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                        <li><a href="#">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Backtrader Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

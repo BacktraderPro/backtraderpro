@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Backtrader Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Backtrader Pro</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="getting-started.html">Getting Started</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+                <li><a href="index.html#download" class="btn-download">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content-page">
+        <div class="container">
+            <aside class="sidebar">
+                <h3>Categories</h3>
+                <ul class="toc">
+                    <li><a href="#general">General</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#data">Data</a></li>
+                    <li><a href="#strategies">Strategies</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                </ul>
+            </aside>
+
+            <main class="main-content">
+                <h1>Frequently Asked Questions</h1>
+                <p class="intro">Find answers to common questions about Backtrader Pro.</p>
+
+                <section id="general">
+                    <h2>General Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>What is Backtrader Pro?</h3>
+                        <p>Backtrader Pro is a professional trading strategy development and backtesting platform. It allows traders and quantitative analysts to create, test, and optimize trading strategies using historical market data.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Is Backtrader Pro free?</h3>
+                        <p>Backtrader Pro offers both free and premium tiers. The free version includes core backtesting functionality, while premium features include live trading integration, advanced optimization algorithms, and priority support.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What markets does Backtrader Pro support?</h3>
+                        <p>Backtrader Pro supports stocks, forex, cryptocurrencies, futures, and options. As long as you have historical price data in a compatible format, you can backtest strategies for any market.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I use Backtrader Pro for live trading?</h3>
+                        <p>Live trading integration is available in the premium version. You can connect to supported brokers and execute strategies in real-time. Always thoroughly backtest and paper trade before going live.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Do I need programming experience?</h3>
+                        <p>While basic programming knowledge is helpful, Backtrader Pro includes a visual strategy builder and pre-built templates that make it accessible to users of all skill levels. The platform also includes comprehensive documentation and examples.</p>
+                    </div>
+                </section>
+
+                <section id="installation">
+                    <h2>Installation & Setup</h2>
+
+                    <div class="faq-item">
+                        <h3>What are the system requirements?</h3>
+                        <p>Minimum: Windows 10/macOS 11/Ubuntu 20.04, 4GB RAM, 500MB storage. Recommended: 8GB+ RAM for better performance with large datasets. See the <a href="getting-started.html#system-requirements">Getting Started guide</a> for complete details.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>The installer won't run on macOS. What should I do?</h3>
+                        <p>If you see a security warning about an unidentified developer, go to System Preferences → Security & Privacy, and click "Open Anyway" next to the Backtrader Pro message.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I install on multiple computers?</h3>
+                        <p>Yes, you can install Backtrader Pro on multiple computers for personal use. Commercial licenses have different terms - contact us for details.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I update to the latest version?</h3>
+                        <p>Backtrader Pro will notify you when updates are available. You can also manually check by going to Help → Check for Updates. Download the latest installer from the website and run it - your settings and strategies will be preserved.</p>
+                    </div>
+                </section>
+
+                <section id="usage">
+                    <h2>Using Backtrader Pro</h2>
+
+                    <div class="faq-item">
+                        <h3>How do I import my own data?</h3>
+                        <p>Go to File → Preferences → Data Sources and add a CSV data source. Your CSV should include datetime, open, high, low, close, and volume columns. See the <a href="documentation.html#data-feeds">documentation</a> for format details.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I test multiple strategies at once?</h3>
+                        <p>Yes, you can run parallel backtests on different strategies or parameter combinations. Use the batch testing feature to queue multiple backtests.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How accurate are the backtest results?</h3>
+                        <p>Backtest accuracy depends on data quality and realistic assumptions about commissions and slippage. Backtrader Pro simulates realistic market conditions, but past performance doesn't guarantee future results. Always validate strategies with out-of-sample testing and paper trading.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What's the difference between optimization and walk-forward analysis?</h3>
+                        <p>Optimization finds the best parameters for your strategy on historical data. Walk-forward analysis goes further by repeatedly optimizing on one period and testing on the next, helping identify robust strategies that aren't just curve-fit to historical data.</p>
+                    </div>
+                </section>
+
+                <section id="data">
+                    <h2>Data Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Where can I get historical data?</h3>
+                        <p>Popular sources include Yahoo Finance (free), Alpha Vantage (free with API key), your broker's data export, and premium providers like Quandl or IEX Cloud. Backtrader Pro can connect to most sources via API or CSV import.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What data format is required?</h3>
+                        <p>The minimum required fields are datetime, open, high, low, close. Volume is recommended. For CSV files, the first row should be column headers. Datetime should be in a standard format (YYYY-MM-DD or YYYY-MM-DD HH:MM:SS).</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I handle missing data or gaps?</h3>
+                        <p>Backtrader Pro can automatically handle common data issues like weekends and holidays. For other gaps, you can configure how the platform should fill missing bars in the data source settings.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I use tick data?</h3>
+                        <p>Yes, premium users can use tick-level data for more granular backtesting. Note that processing tick data requires more computational resources.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I test with multiple symbols?</h3>
+                        <p>Add multiple data feeds to your backtest. Each feed can represent a different symbol. Your strategy can then access data from all feeds and trade multiple instruments.</p>
+                    </div>
+                </section>
+
+                <section id="strategies">
+                    <h2>Strategy Development</h2>
+
+                    <div class="faq-item">
+                        <h3>Where should I start as a beginner?</h3>
+                        <p>Start with the built-in example strategies and the interactive tutorial. Try modifying the simple moving average crossover strategy to understand how strategies work. Then consult the <a href="getting-started.html">Getting Started guide</a>.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I use custom indicators?</h3>
+                        <p>Yes! You can create custom indicators by extending the indicator base class. You can also combine existing indicators to create new ones.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I avoid overfitting?</h3>
+                        <p>Key practices: use out-of-sample testing, implement walk-forward analysis, keep strategies simple, use realistic costs/slippage, and avoid excessive parameter optimization. If results seem too good to be true, they probably are.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I backtest portfolio strategies?</h3>
+                        <p>Yes, you can create strategies that trade multiple instruments simultaneously and manage portfolio-level risk and allocation.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I implement stop losses and take profits?</h3>
+                        <p>You can use stop and limit orders, or implement logic in your strategy to exit positions when certain conditions are met. See the documentation for examples.</p>
+                    </div>
+                </section>
+
+                <section id="troubleshooting">
+                    <h2>Troubleshooting</h2>
+
+                    <div class="faq-item">
+                        <h3>Backtrader Pro won't start / crashes on launch</h3>
+                        <p>Try these steps:</p>
+                        <ul>
+                            <li>Restart your computer</li>
+                            <li>Check that you meet the minimum system requirements</li>
+                            <li>Reinstall the application</li>
+                            <li>Check for conflicting antivirus software</li>
+                            <li>Review error logs in the application folder</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>My backtest is running very slowly</h3>
+                        <p>Performance tips:</p>
+                        <ul>
+                            <li>Reduce the amount of historical data</li>
+                            <li>Simplify complex indicators</li>
+                            <li>Disable unnecessary analyzers and plotting</li>
+                            <li>Close other resource-intensive applications</li>
+                            <li>Consider upgrading RAM or CPU</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>I'm getting "Data feed error" messages</h3>
+                        <p>Common causes:</p>
+                        <ul>
+                            <li>Incorrect data format or missing required columns</li>
+                            <li>Invalid date formats in CSV files</li>
+                            <li>API connection issues or invalid credentials</li>
+                            <li>Network connectivity problems</li>
+                        </ul>
+                        <p>Check your data source configuration and verify the data format matches requirements.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>My strategy isn't generating any trades</h3>
+                        <p>Check these common issues:</p>
+                        <ul>
+                            <li>Verify your entry conditions are being met</li>
+                            <li>Check that you have sufficient capital for position sizing</li>
+                            <li>Ensure data feed is properly loaded</li>
+                            <li>Review your strategy logic for errors</li>
+                            <li>Add logging to track what's happening</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Where can I get additional help?</h3>
+                        <p>If your question isn't answered here:</p>
+                        <ul>
+                            <li>Check the <a href="documentation.html">full documentation</a></li>
+                            <li>Visit the community forum</li>
+                            <li>Report bugs on our GitHub repository</li>
+                            <li>Contact support for premium users</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <div class="cta-box">
+                    <h3>Still Have Questions?</h3>
+                    <p>Join our community forum or check out the complete documentation.</p>
+                    <a href="documentation.html" class="cta-button">View Documentation</a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Backtrader Pro</h4>
+                    <p>Professional trading strategy development platform</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="index.html#download">Downloads</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                        <li><a href="#">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Backtrader Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
